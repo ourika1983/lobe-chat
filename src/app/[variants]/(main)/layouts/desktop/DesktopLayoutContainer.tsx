@@ -3,7 +3,7 @@ import { PropsWithChildren, Suspense, memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import { useLocation } from 'react-router-dom';
 
-import SideBar from './SideBar';
+import NavPanel from '@/features/NavPanel';
 
 const DesktopLayoutContainer = memo<PropsWithChildren>(({ children }) => {
   const theme = useTheme();
@@ -12,9 +12,7 @@ const DesktopLayoutContainer = memo<PropsWithChildren>(({ children }) => {
   const hideSideBar = pathname.startsWith('/settings');
   return (
     <>
-      <Suspense>
-        {!hideSideBar && <SideBar />}
-      </Suspense>
+      <Suspense>{!hideSideBar && <NavPanel />}</Suspense>
       <Flexbox
         style={{
           background: theme.colorBgLayout,
