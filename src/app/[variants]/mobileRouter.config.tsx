@@ -409,6 +409,11 @@ export const createMobileRouter = (locale: Locales) =>
             {
               element: <KnowledgeBaseDetail />,
               loader: idLoader,
+              path: 'bases/:id/*',
+            },
+            {
+              element: <KnowledgeBaseDetail />,
+              loader: idLoader,
               path: 'bases/:id',
             },
           ],
